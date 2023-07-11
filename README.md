@@ -20,7 +20,7 @@ Google Research applies ML to opportunities to mitigate climate change and adapt
 
 ## EValuation
 
-This competition is evaluated on the global [Dice coefficient]([Title](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient)). The Dice coefficient can be used to compare the pixel-wise agreement between a predicted segmentation and its corresponding ground truth. The formula is given by:
+This competition is evaluated on the global [Dice coefficient](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient). The Dice coefficient can be used to compare the pixel-wise agreement between a predicted segmentation and its corresponding ground truth. The formula is given by:
 
 $$ Dice = \frac{2*|X \cap Y|}{|X| + |Y|} $$
 
@@ -49,7 +49,7 @@ This is an example of labeled contrails. Code to produce images like this can be
 
 
 - **train/** - the training set; each folder represents a record_id and contains the following data:
-    - **band_{08-16}.npy**: array with size of $H * W * T$, where $T = n_{times\_before} + n_{times\_after} + 1$, representing the number of images in the sequence. There are $n_{times\_before}$ and $n_{times\_after}$ images before and after the labeled frame respectively. In our dataset all examples have $n_{times\_before}=4$ and $n_{times_after}=3$. Each band represents an infrared channel at different wavelengths and is converted to brightness temperatures based on the calibration parameters. The number in the filename corresponds to the GOES-16 ABI band number. Details of the ABI bands can be found here.
+    - **band_{08-16}.npy**: array with size of $H * W * T$, where $T = n_{times\_before} + n_{times\_after} + 1$, representing the number of images in the sequence. There are $n_{times\_before}$ and $n_{times\_after}$ images before and after the labeled frame respectively. In our dataset all examples have $n_{times\_before}=4$ and $n_{times_after}=3$. Each band represents an infrared channel at different wavelengths and is converted to brightness temperatures based on the calibration parameters. The number in the filename corresponds to the GOES-16 ABI band number. Details of the ABI bands can be found [here](https://www.goes-r.gov/mission/ABI-bands-quick-info.html).
 
     - **human_individual_masks.npy**: array with size of $H * W * 1 * R$. Each example is labeled by R individual human labelers. R is not the same for all samples. The labeled masks have value either 0 or 1 and correspond to the ($n_{times\_before}$+1)-th image in band_{08-16}.npy. They are available only in the training set.
 
